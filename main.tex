@@ -1,0 +1,145 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[11pt,fleqn]{book} % Default font size and left-justified equations
+
+%----------------------------------------------------------------------------------------
+\usepackage[usenames, dvipsnames]{color}
+ \input{plantilla}% Insert the commands.tex file which contains the majority of the structure  behind the template
+
+
+%%agregué
+
+\usepackage{titlesec}
+\usepackage[spanish, activeacute]{babel}
+\usepackage[utf8]{inputenc}
+
+
+\decimalpoint
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they
+\usepackage{multirow}
+\usepackage{setspace} % para el espacio de las filas de la tabla
+
+
+\usepackage{graphicx} % paquete que permite introducir imágenes
+
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they
+
+\usepackage{colortbl}
+\usepackage{amsmath}
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%%hasta aquí
+
+
+\begin{document}
+
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+\coordinate [below=12cm] (midpoint) at (current page.north);
+\node at (current page.north west)
+{\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{background}}; % Background image
+\draw[anchor=north] (midpoint) node [fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering Guía de Ingeniería Económica\\[15pt] % Book title
+{\Large Versión 2017-3}\\[20pt] % Subtitle
+{\huge }}}; % Author name
+\end{tikzpicture}};
+\end{tikzpicture}
+\vfill
+\endgroup
+
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+
+
+%\newpage
+%~\vfill
+%\thispagestyle{empty}
+
+%\noindent Copyright \copyright\ 2013 John Smith\\ % Copyright notice
+
+%\noindent \textsc{Published by Publisher}\\ % Publisher
+
+%\noindent \textsc{book-website.com}\\ % URL
+
+%\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information
+
+%\noindent \textit{First printing, March 2013} % Printing/edition date
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\newpage
+~\vfill
+\thispagestyle{empty}
+
+\noindent Derechos de autor \copyright\\ % Copyright notice
+
+\noindent \textsc{GUÍA INGENIERÍA ECONÓMICA}\\ % Publisher
+
+\includegraphics[height=9cm]{img/chAnexos/gingeco.PNG}
+
+\vspace{4mm}
+\\ \hline \\
+\vspace{2mm}
+
+\noindent Esta guía fue realizada basada en el libro 'Ingeniería Económica' Octava Edición de Guillermo Baca Currea con el propósito de promover el aprendizaje de los temas pertinentes tratados en este texto en cualquier individuo que desee formarse en ellos.\\ \hline \\
+\vspace{2mm} La protección del derecho de autor abarcará las expresiones pero no las ideas, procedimientos, métodos de operación o conceptos matemáticos en sí.\\% License information
+
+\noindent \textit{Edición 2017-3}
+
+
+\clearpage
+
+\chapterimage{ima1} % Table of contents heading image
+
+%\chapterimage{chapter_head_1.pdf} % Table of contents heading image
+
+\pagestyle{empty} % No headers
+
+ \tableofcontents % Print the table of contents itself
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right
+
+\pagestyle{fancy} % Print headers again
+
+
+\graphicspath{ {img/} }%imagenes de los capitulos, encabezado y background 
+
+\include{TablasEcuNom}
+\include{guiaEjercicios}
+\include{ch1}
+\include{ch2}
+\include{ch3}
+\include{ch4}
+\include{ch5}
+\include{ch6}
+\include{ch7}
+\include{ch8}
+\include{chE}
+\include{glosario}
+\include{chAnexos}
+
+
+
+\end{document}
